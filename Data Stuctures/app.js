@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 var debug = require('debug');
 var express = require('express');
 var path = require('path');
@@ -27,6 +27,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+//测试数据结构
+//import Linked from './LinkedList/Linked'
+const Linked = require('./LinkedList/Linked');
+let mylink = new Linked();
+mylink.print();
+mylink.append(1);
+mylink.append(2);
+mylink.append(3);
+mylink.print();
+console.log("插入")
+mylink.insert(2, 99);
+mylink.print();
+console.log("移除")
+mylink.remove(2);
+mylink.remove(99);
+mylink.print();
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
