@@ -39,10 +39,18 @@ mylink.print();
 console.log("插入")
 mylink.insert(2, 99);
 mylink.print();
+console.log("获取长度");
+console.log(mylink.size());
 console.log("移除")
 mylink.remove(2);
 mylink.remove(99);
 mylink.print();
+console.log("获取长度");
+console.log(mylink.size());
+console.log("获取索引");
+console.log(mylink.indexof(3));
+console.log("获取长度");
+console.log(mylink.size());
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');

@@ -42,6 +42,7 @@ class LinkedList {
         node.next = current.next;
         current.next = node;
       }
+      this.length++;
     }
     else {
       return false;
@@ -59,7 +60,7 @@ class LinkedList {
       current = current.next;
     }
     if (exit == true) {
-      if (current.next == null) {//为null说明被删除元素是最后一个
+      if (current.next.next == null) {//为null说明被删除元素是最后一个
         current.next = null;
       }
       else {
@@ -69,6 +70,7 @@ class LinkedList {
     else {
       return false;
     }
+    this.length--;
   }
   //返回元素的索引,若不存在则返回-1,索引从0开始
   indexof(element) {
@@ -83,7 +85,7 @@ class LinkedList {
     }
     //判断最后一个node
     if (current.element == element) {
-      return length - 1;
+      return this.length - 1;
     }
     else {//若最后一个元素都不满足条件，则可判断不存在这个元素
       return -1;
